@@ -5,6 +5,17 @@
       Countdown timer for use with Mix It Up
     </title>
     <style>
+        @keyframes blink {
+          0%   {color: #000000;}
+          50%  {color: #000000;}
+          51%   {color: #FF0000;}
+          100%  {color: #FF0000;}
+        }
+        .timesUp {
+          animation-name: blink;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
         .mainDisplay{
             width: fit-content;
             margin: auto;
@@ -12,7 +23,7 @@
     </style>
   </head>
   <body>
-    <div id="mainDisplay"></div>
+    <div id="mainDisplay" class="mainDisplay"></div>
     <script src="./countdown.js"></script>
   </body>
 </html>
