@@ -43,7 +43,7 @@ function msToTime(s) {
 
 // Make sure the time parameter is set and valid
 if (urlParams.has('t') == false || sizeRegex.test(urlParams.get('t')) == false){
-    document.getElementById("mainDisplay").innerHTML = '<div style="font-size: 40px; font-weight: bold; width: fit-content; height: fit-content; margin: auto;">NO TIME SET</div>';
+    document.getElementById("mainDisplay").innerHTML = '';
 } else {
     // Set the number of milliseconds we are counting down to
     var t = urlParams.get('t');
@@ -76,7 +76,8 @@ if (urlParams.has('t') == false || sizeRegex.test(urlParams.get('t')) == false){
                 }, function () { console.error('The request failed.'); } );
             }
             request.send();
-            // Clear interval
+            // Clear the display after 5 seconds, enough time for the alarm to finish.
+            setTimeout(function(){document.getElementById("mainDisplay").innerHTML = '';}, 5000);
             clearInterval(x);
         } else {
             html += '<div style="font-size: ' + fontSize + 'px; color: rgba(' + fontColor + '); font-weight: bold; width: fit-content; height: fit-content; margin: auto; padding: 5px 20px 5px 20px; background-color: rgba(' + backgroundColor + '); border-radius: 25px;">';
