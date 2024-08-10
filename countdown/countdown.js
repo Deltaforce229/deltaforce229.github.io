@@ -85,7 +85,7 @@ if (urlParams.has('t') == false || sizeRegex.test(urlParams.get('t')) == false){
             html += '</div>'
         }
         document.getElementById("mainDisplay").innerHTML = html;
-    }, 500);
+    }, 1000);
 }
 
 //color: #281d37; background-color: rgba(232, 124, 192, 0.4)
